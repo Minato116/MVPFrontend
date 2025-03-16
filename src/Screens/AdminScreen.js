@@ -24,7 +24,7 @@ import WaveEffect from "../components/WaveEffect";
 
 const fetchUsers = async () => {
   try {
-    const res = await fetch('https://mvpbackend-1.onrender.com/api/admin');
+    const res = await fetch('https://mvpbackend.onrender.com/api/admin');
     if (!res.ok) throw new Error("Failed to fetch users");
     const data = await res.json();
     return data.data;
@@ -46,7 +46,7 @@ export default function UserManagement() {
   
 const handleSave = async (user) => {
   try {
-      const response = await fetch(`https://mvpbackend-1.onrender.com/api/admin/${user._id}`, {
+      const response = await fetch(`https://mvpbackend.onrender.com/api/admin/${user._id}`, {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(user),
@@ -80,7 +80,7 @@ const handleSave = async (user) => {
   // ✅ DELETE USER
   const handleDelete = async (id) => {
     try {
-      const res = await fetch(`https://mvpbackend-1.onrender.com/api/admin/${id}`, { method: "DELETE" });
+      const res = await fetch(`https://mvpbackend.onrender.com/api/admin/${id}`, { method: "DELETE" });
       const data = await res.json();
       if (data.success) {
         setUsers(users.filter((user) => user._id !== id));
