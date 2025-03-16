@@ -28,7 +28,7 @@ const QuizScreen = () => {
     
     const getQuestions = async () => {
         try {
-            const res = await fetch('http://localhost:5000/api/quiz'); // ✅ Use correct backend port
+            const res = await fetch('https://specificationmvp.onrender.com/api/quiz'); // ✅ Use correct backend port
             const text = await res.text(); // Read raw response
      
             return JSON.parse(text); // ✅ Convert to JSON

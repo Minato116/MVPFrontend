@@ -68,7 +68,7 @@ const Report = ({ score = 0, totalQuestions = 1, onRestart, categorizedResults =
     console.log("Report being sent:", JSON.stringify(report));
   
     try {
-      const response = await fetch('http://localhost:5000/api/reports', {
+      const response = await fetch('https://specificationmvp.onrender.com/api/reports', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(report),
