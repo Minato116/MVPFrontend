@@ -14,7 +14,7 @@ const AnswerModal = ({ show, onClose, questions, categorizedAnswers, clickAnswer
     }));
   
     try {
-      const response = await fetch("https://mvpbackend.onrender.com/reports", {
+      const response = await fetch("https://mvpbackend-1.onrender.com/reports", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(submittedData),
