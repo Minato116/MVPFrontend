@@ -37,20 +37,20 @@ const LogInScreen = () => {
         <div className="container py-5 h-100" id="login">
           <div className="row d-flex justify-content-center align-items-center h-100">
             <div className="col col-xl-10">
-              <div className="card shadow-lg" style={{borderRadius: "1rem"}}>
+              <div className="card shadow-lg" style={{ borderRadius: "1rem" }}>
                 <div className="row g-0">
                   <div className="col-md-6 col-lg-5 d-none d-md-block">
                     <img
                       src={login_img}
                       alt="login form"
                       className="img-fluid h-100"
-                      style={{borderRadius: "1rem 0 0 1rem"}}
+                      style={{ borderRadius: "1rem 0 0 1rem" }}
                     />
                   </div>
                   <div className="col-md-6 col-lg-7 d-flex align-items-center">
                     <div className="card-body p-4 p-lg-5 text-black ">
                       <form>
-                        <div className="d-flex align-items-center mb-3 pb-1">                          
+                        <div className="d-flex align-items-center mb-3 pb-1">
                           <span><img src={logo} alt="" className="animated" width="100" height="100" /></span>
                           <span className="h1 fw-bold mb-0 mx-5 text-secondary">  CVFied</span>
                         </div>
@@ -61,7 +61,7 @@ const LogInScreen = () => {
                             placeholder="Enter email"
                             className="form-control form-control-lg"
                             value={email}
-                            onChange={(e)=>setEmail(e.target.value)}
+                            onChange={(e) => setEmail(e.target.value)}
                           />
                         </div>
 
@@ -73,7 +73,7 @@ const LogInScreen = () => {
                             className="form-control form-control-lg"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
-                          />                          
+                          />
                         </div>
 
                         <div className="pt-1 mb-4">
@@ -84,25 +84,25 @@ const LogInScreen = () => {
                             type="button"
                             onClick={onSubmitHandler}
                           >
-                            Login
+                            {!isLoading && <span id="login"> Login</span>}
+                            {isLoading && <Loader />}
                           </button>
-                          { isLoading && <Loader /> }
                         </div>
 
                         {/* <a className="small text-muted" href="#!">
                           Forgot password?
                         </a> */}
                         <div className="d-flex justify-content-between">
-                        <p className="pb-lg-2">                          
-                          <Link to="/signup" className="text-secondary fw-bolder" >
-                            Register here
-                          </Link>
-                        </p>
-                        <p className="pb-lg-2">                          
-                          <Link to="/forgot" className="text-secondary fw-bolder" >
-                            Forgot Password?
-                          </Link>
-                        </p>
+                          <p className="pb-lg-2">
+                            <Link to="/signup" className="text-secondary fw-bolder" >
+                              Register here
+                            </Link>
+                          </p>
+                          <p className="pb-lg-2">
+                            <Link to="/forgot" className="text-secondary fw-bolder" >
+                              Forgot Password?
+                            </Link>
+                          </p>
                         </div>
                       </form>
                     </div>

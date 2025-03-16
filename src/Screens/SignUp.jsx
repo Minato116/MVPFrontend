@@ -101,7 +101,7 @@ const SignUp = () => {
           <div className="col-lg-12 col-xl-11">
             <div className="card text-black" style={{ borderRadius: "25px" }}>
               <div className="card-body p-md-5">
-                <div className="row justify-content-center">                  
+                <div className="row justify-content-center">
                   <p className="text-center h1 fw-bold mb-3 mx-1 mx-md-4 mt-2 text-secondary">
                     Sign up
                   </p>
@@ -357,14 +357,15 @@ const SignUp = () => {
                     className="btn btn-primary btn-lg w-50"
                     onClick={signupHandler}
                   >
-                    Register
+                    {!isLoading && <span>Register</span>}
+                    {isLoading && <Loader />}
                   </button>
-                  {isLoading && <Loader />}
+
                 </div>
                 <div className="text-center">
-                <Link to="/login" >
+                  <Link to="/login" >
                     Already have an account?
-                  </Link>                  
+                  </Link>
                 </div>
               </div>
             </div>
